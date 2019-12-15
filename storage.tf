@@ -12,6 +12,8 @@ resource "aws_s3_bucket" "private" {
       }
     }
   }
+
+  force_destroy = true
 }
 
 resource "aws_s3_bucket_public_access_block" "private" {
@@ -32,6 +34,8 @@ resource "aws_s3_bucket" "public" {
     allowed_headers = ["*"]
     max_age_seconds = 3000
   }
+
+  force_destroy = true
 }
 
 resource "aws_s3_bucket" "alb_log" {
@@ -44,6 +48,8 @@ resource "aws_s3_bucket" "alb_log" {
       days = "180"
     }
   }
+
+  force_destroy = true
 }
 
 resource "aws_s3_bucket_policy" "alb_log" {
