@@ -5,6 +5,6 @@ WORKDIR $APP_ROOT
 
 RUN date > index.html
 
-EXPOSE 8080
+EXPOSE 80
 
-CMD [ "python", "-m", "http.server", "8080" ]
+CMD [ "python", "-m", "http.server", "80" ]
