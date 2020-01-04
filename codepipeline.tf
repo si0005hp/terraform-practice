@@ -59,7 +59,7 @@ resource "aws_codepipeline" "example" {
 
       configuration = {
         Owner                = "si0005hp"
-        Repo                 = "terraform-sandbox"
+        Repo                 = "terraform-practice"
         Branch               = "master"
         PollForSourceChanges = false
       }
@@ -130,7 +130,7 @@ provider "github" {
 }
 
 resource "github_repository_webhook" "example" {
-  repository = "terraform-sandbox"
+  repository = "terraform-practice"
 
   configuration {
     url          = aws_codepipeline_webhook.example.url
