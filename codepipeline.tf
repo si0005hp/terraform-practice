@@ -38,6 +38,8 @@ resource "aws_s3_bucket" "artifact" {
       days = "180"
     }
   }
+
+  force_destroy = true
 }
 
 resource "aws_codepipeline" "example" {
